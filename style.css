@@ -1,0 +1,269 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  background: var(--main-color);
+}
+
+.container {
+  max-width: 1920px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/* Main grid styles */
+
+header,
+footer,
+main {
+  flex: 0 0 auto;
+}
+
+.header-row,
+.footer-row {
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* drop-down */
+
+.header-arrow {
+  width: 60px;
+  height: 60px;
+  position: relative;
+}
+.arrow-item {
+  position: fixed;
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  border-top: 5px solid var(--logo-color);
+  border-right: 5px solid var(--logo-color);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.arrow-bottom:hover {
+  border-color: var(--button-hover-color);
+}
+.arrow-bottom {
+  transform: rotate(135deg);
+}
+.arrow-top {
+  transform: rotate(-45deg);
+  border-color: var(--button-hover-color);
+}
+.arrow-top:hover {
+  border-color: var(--logo-color);
+}
+
+.main-drop-down {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.drop-down-container {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  text-align: center;
+  padding: 20px 0 10px 0;
+  color: var(--text-color);
+  background: var(--drop-down-color);
+  z-index: 5;
+  left: 0;
+  top: -430px;
+  transition: all 0.5s ease-in-out;
+}
+.drop-modify {
+  top: 0;
+}
+
+.drop-down-container p {
+  font-size: 18px;
+  padding: 10px 0;
+}
+.drop-down-title {
+  font-size: 22px;
+  padding: 30px 0;
+}
+
+.main-general-cont {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  overflow: hidden;
+}
+
+.footer-created {
+  color: var(--button-color);
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+}
+.footer-created:hover {
+  color: var(--button-hover-color);
+}
+
+/* animation */
+
+.animation img {
+  width: 300px;
+}
+
+.main-cite-container {
+  width: 400px;
+  height: auto;
+  background: var(--cite-color);
+  border: 5px solid var(--button-color);
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.main-cite-container::before,
+.main-cite-container::after {
+  content: "";
+  position: absolute;
+  right: -60px;
+  bottom: 10px;
+  border: 30px solid transparent;
+  border-left: 30px solid var(--button-color);
+}
+.main-cite-container::after {
+  border-left: 30px solid var(--cite-color);
+  bottom: 10px;
+  right: -53px;
+}
+
+.main-cite-item {
+  font-size: 18px;
+  line-height: 30px;
+  padding: 20px;
+  width: 100%;
+  height: auto;
+  color: var(--text-color);
+  text-align: justify;
+}
+
+@keyframes roll-petrosyan {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animation-go {
+  animation: roll-petrosyan 2s linear;
+  animation-iteration-count: 2;
+}
+
+/* logo */
+
+.logo {
+  width: 50px;
+  fill: var(--logo-color);
+  transition: all 0.4s ease-in-out;
+}
+.logo:hover {
+  fill: var(--button-hover-color);
+  transform: scale(1.2);
+}
+
+.switcher {
+  cursor: pointer;
+}
+
+/* links */
+
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+/* buttons  */
+
+.main-control-button {
+  margin: 50px 0;
+}
+.control-button {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 10px -10px 5px 0px var(--button-shadow-color),
+    10px 10px 5px 0px var(--button-shadow-color),
+    -10px -10px 5px 0px var(--button-shadow-color),
+    -10px 10px 5px 0px var(--button-shadow-color);
+  transition: 0.5s ease-in-out;
+  background: var(--button-color);
+  color: var(--button-text-color);
+}
+.control-button:hover {
+  transform: scale(1.2);
+  color: var(--button-hover-color);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+.header-language {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.header-language button {
+  background: transparent;
+  color: var(--button-color);
+  transition: all 0.4s ease-in-out;
+}
+.header-language button:hover {
+  color: var(--button-hover-color);
+}
+
+.modify {
+  font-weight: bold;
+  color: var(--button-hover-color) !important;
+}
+
+/*theme */
+
+[data-theme="dark"] {
+  --main-color: #1c1c1c;
+  --logo-color: wheat;
+  --button-color: wheat;
+  --text-color: wheat;
+  --button-text-color: #1c1c1c;
+  --button-hover-color: coral;
+  --button-shadow-color: rgba(199, 182, 188, 0.6);
+  --cite-color: #413d4c;
+  --drop-down-color: black;
+}
+/*
+https://obninsksite.ru/blog/html-and-css/krasivyie-css3-knopki-s-animacziej-i-hover-effektami
+*/
+[data-theme="light"] {
+  --main-color: wheat;
+  --logo-color: #1c1c1c;
+  --button-color: #1c1c1c;
+  --text-color: wheat;
+  --button-text-color: wheat;
+  --button-hover-color: coral;
+  --button-shadow-color: rgba(199, 182, 188, 0.6);
+  --cite-color: #413d4c;
+  --drop-down-color: rgb(116, 17, 17);
+}
