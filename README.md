@@ -1,1 +1,1 @@
-link: https://ligalaz.github.io/Fun_Api
+link: https://ligalaz.github.io/RandomJokes
